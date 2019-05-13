@@ -1,0 +1,23 @@
+<ul class="list-of-hotels">
+  <li class="card-hotel" *ngFor="let item of hotels">
+    <img src="/assets/images/hotels/{{item.image}}" class="image-hotel">
+    <div class="info-hotel-content">
+      <h3>{{item.name}}</h3>
+      <div class="stars">
+        <app-star [amount]="item.stars"></app-star>
+      </div>
+      <div class="options-hotel">
+        <img src="/assets/icons/amenities/{{item}}.svg" class="option" *ngFor="let item of item.amenities">
+      </div>
+    </div>
+    <div class="price-hotel-content">
+      <span>Precio por noche por habitación</span>
+      <span class="price-hotel">
+        ARS <b>{{item.price}}</b>
+      </span>
+      <button>
+        Ver hotel
+      </button>
+    </div>
+  </li>
+</ul>

@@ -1,0 +1,60 @@
+<div class="filters">
+  <div class="options-filter closed" *ngIf="!showFilters.showAllFilters" (click)="toggleFilter('showAllFilters')">
+    <p>Filtrar </p>
+    <i class="fas fa-sort-up"></i>
+  </div>
+  <div class="options-filter" *ngIf="showFilters.showAllFilters" (click)="toggleFilter('showAllFilters')">
+    <p>Cerrar </p>
+    <i class="fas fa-close"></i>
+  </div>
+
+
+  <div class="filter"  *ngIf="showFilters.showAllFilters">
+    <div class="header-filter">
+      <span style="color:black;">Filtros</span>
+    </div>
+  </div>
+
+  <div class="filter" *ngIf="showFilters.showAllFilters">
+    <div class="header-filter">
+      <div>
+        <i class="fas fa-search"></i>
+        <span>Nombre de hotel</span>
+      </div>
+      <div (click)="toggleFilter('showName')">
+        <i class="fas fa-sort-up" *ngIf="showFilters.showName"></i>
+        <i class="fas fa-sort-down" *ngIf="!showFilters.showName"></i>
+      </div>
+    </div>
+    <div class="body-filter" *ngIf="showFilters.showName">
+      <form (submit)="getHotels()">
+        <input type="text" placeholder="Ingrese el nombre del hotel" [(ngModel)]="filters.name" name="name">
+        <button type="submit">
+          Aceptar
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div class="filter" *ngIf="showFilters.showAllFilters">
+    <div class="header-filter">
+      <div>
+        <i class="fas fa-star"></i>
+        <span>Estrellas</span>
+      </div>
+      <div (click)="toggleFilter('showStars')">
+        <i class="fas fa-sort-up" *ngIf="showFilters.showStars"></i>
+        <i class="fas fa-sort-down" *ngIf="!showFilters.showStars"></i>
+      </div>
+    </div>
+    <div class="body-filter" *ngIf="showFilters.showStars">
+      <ul>
+        <li *ngFor="let item of stars">
+          <input type="checkbox" [(ngModel)]="item.selected" (change)="getHotels()">
+          <span *ngIf="item?.text">Todas las estrellas</span>
+          <app-star [amount]="item.value" *ngIf="item?.showStar"></app-star>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

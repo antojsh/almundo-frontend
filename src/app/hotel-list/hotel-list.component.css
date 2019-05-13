@@ -1,0 +1,113 @@
+.list-of-hotels {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list-of-hotels .card-hotel {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 1.5em 0;
+  background: white;
+  height: 250px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.082), 0 1px 2px rgba(0, 0, 0, 0.14);
+  transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+.list-of-hotels .card-hotel .stars {
+  margin-top: 10px;
+}
+
+.list-of-hotels .card-hotel .info-hotel-content {
+  width: 45%;
+  padding: 10px;
+}
+
+.list-of-hotels .card-hotel .info-hotel-content h3 {
+  margin: 0;
+  color: #0679b3;
+}
+
+.list-of-hotels .card-hotel img.image-hotel {
+  width: 30%;
+  margin: 10px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.list-of-hotels .card-hotel .price-hotel-content {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-left: 1px dashed #dadada;
+}
+
+.list-of-hotels .card-hotel .price-hotel-content span {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.list-of-hotels .card-hotel .price-hotel-content span.price-hotel {
+  text-align: center;
+  color: #e16800;
+}
+
+.list-of-hotels .card-hotel .price-hotel-content span.price-hotel b {
+  font-size: 2em;
+}
+
+.list-of-hotels .card-hotel .price-hotel-content button {
+  padding: 9px 40px;
+  margin-top: 10px;
+}
+
+
+.list-of-hotels .card-hotel .options-hotel {
+  display: flex;
+  margin-top: 1em;
+}
+
+.list-of-hotels .card-hotel .options-hotel img {
+  margin-right: 5px;
+  width: 20px;
+  height: 20px;
+}
+
+
+
+/* Mobile version */
+@media screen and (max-width : 992px) {
+
+  .list-of-hotels .card-hotel {
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    align-items: center;
+  }
+
+  .list-of-hotels .card-hotel img.image-hotel {
+    width: 90%;
+    max-height: 250px;
+    max-width: 100%;
+  }
+
+  .list-of-hotels .card-hotel .info-hotel-content {
+    width: 100%;
+  }
+
+  .list-of-hotels .card-hotel .price-hotel-content {
+    width: 100%;
+    margin-bottom: 30px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    border-top: 1px dashed #dadada;
+    border-left: none;
+  }
+
+  .list-of-hotels .card-hotel .price-hotel-content button {
+    width: 100%;
+    height: 50px;
+  }
+}
